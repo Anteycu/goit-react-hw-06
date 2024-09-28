@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
 import css from "./SearchBox.module.css";
 
-const SearchBox = ({ query, onSearch }) => {
+const SearchBox = () => {
+  const searchedName = useSelector((state) => state.filters.name);
   return (
     <div className={css.searcher}>
       <h2>Search contact</h2>
-      <input value={query} onChange={(e) => onSearch(e.target.value)} />
+      <input value={searchedName} onChange={() => {}} />
     </div>
   );
 };

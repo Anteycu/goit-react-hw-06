@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 import css from "./ContactForm.module.css";
 
 const initialValues = {
@@ -20,23 +20,23 @@ const ContactSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const ContactForm = ({ onAdd }) => {
+const ContactForm = () => {
   const phoneId = useId();
   const nameId = useId();
 
-  const handleSubmit = (values, actions) => {
-    onAdd({
-      id: uuidv4(),
-      ...values,
-    });
+  // const handleSubmit = (values, actions) => {
+  //   onAdd({
+  //     id: uuidv4(),
+  //     ...values,
+  //   });
 
-    actions.resetForm();
-  };
+  //   actions.resetForm();
+  // };
 
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
       validationSchema={ContactSchema}
     >
       <Form className={css.form}>
