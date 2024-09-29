@@ -7,24 +7,10 @@ function App() {
   //   const savedContacts = JSON.parse(localStorage.getItem("contacts"));
   //   return savedContacts ?? initContacts;
   // });
-  // const [query, setQuery] = useState("");
 
   // useEffect(() => {
   //   localStorage.setItem("contacts", JSON.stringify(contacts));
   // }, [contacts]);
-
-  // const onSearchResult = contacts.filter((item) =>
-  //   item.name.toLowerCase().includes(query.toLowerCase())
-  // );
-
-  // const addContact = (newContact) => {
-  //   setContacts((prevContacts) => [...prevContacts, newContact]);
-  // };
-  // const deleteContact = (id) => {
-  //   setContacts((prevContacts) =>
-  //     prevContacts.filter((contact) => contact.id !== id)
-  //   );
-  // };
 
   return (
     <div className="container">
