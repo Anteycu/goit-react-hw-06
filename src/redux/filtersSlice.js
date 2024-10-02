@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-export const selectNameFilter = (state) => state.filters.name;
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const filtersSlice = createSlice({
   name: "filters",
@@ -17,5 +17,16 @@ const filtersSlice = createSlice({
   },
 });
 
+const persistConfig = {
+  key: "filters",
+  storage,
+};
+
+export const filtersReducer = persistReducer(
+  persistConfig,
+  filtersSlice.reducer
+);
+
 export const { changeFilter } = filtersSlice.actions;
-export default filtersSlice.reducer;
+
+export const selectNameFilter = (state) => state.filters.name;
